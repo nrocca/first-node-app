@@ -5,7 +5,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 getFiles = () => {
-rl.question("Inserte el directorio a leer: \n", function(input) {
+rl.question("Inserte el directorio a leer: \nEjemplo para Windows: 'C:/Users/username/myfolder'\nEjemplo para GNU/Linux: '/home/username/myfolder'\n", function(input) {
     fs.readdir(input,(err,files) => {
         (err)?console.log('ERROR! -> El directorio especificado no es válido. Terminando ejecución..\n'): console.log('Lista de archivos:', files);
     })
@@ -14,7 +14,7 @@ rl.question("Inserte el directorio a leer: \n", function(input) {
 }
 
 printFiles= () => {
-    rl.question("Ingrese el directorio a imprimir: \n", function(input) {
+    rl.question("Ingrese el directorio a imprimir:\nEjemplo para Windows: 'C:/Users/username/myfolder'\nEjemplo para GNU/Linux: '/home/username/myfolder'\n", function(input) {
         fs.readdir(input,(err,files) => {
             if (err) {
                 console.log('ERROR! -> El directorio especificado no es válido. Terminando ejecución..\n');
@@ -30,7 +30,7 @@ printFiles= () => {
 
 
 reverseFiles= () => {
-    rl.question("Ingrese el directorio a revertir: \n", function(input) {
+    rl.question("Ingrese el directorio a revertir:\nEjemplo para Windows: 'C:/Users/username/myfolder'\nEjemplo para GNU/Linux: '/home/username/myfolder'\n", function(input) {
         fs.readdir(input,(err,files) => {
             (err)?console.log('ERROR! -> El directorio especificado no es válido. Terminando ejecución..\n'): console.log(`La carpeta invertida es \n[${files.reverse()}] \n`);;
         })
@@ -43,7 +43,7 @@ counter = (array,char) => {
     return count;
 }
 filesByName= () => {
-        rl.question("Ingrese el directorio a revisar: \n", function(input) {
+        rl.question("Ingrese el directorio a revisar:\nEjemplo para Windows: 'C:/Users/username/myfolder'\nEjemplo para GNU/Linux: '/home/username/myfolder'\n", function(input) {
             rl.question("Ingrese el caracter que desea revisar:", function(letter) {
             fs.readdir(input,(err,files) => {
                 (err)?console.log('ERROR! -> El directorio especificado no es válido. Terminando ejecución..\n'): console.log(`Hay ${counter(files,letter)} archivos que comienzan con "${letter}"`);
